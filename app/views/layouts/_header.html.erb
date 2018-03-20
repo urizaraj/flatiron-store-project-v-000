@@ -1,8 +1,15 @@
-<nav class="">
-    <ul>
-        <li> <%= link_to "Store Home", store_path %> </li>
-        <% if !!@cart %>
-          <li> <%= link_to "Cart", cart_path(current_cart) %></li>
+<div class="container-fluid mb-2 mt-2">
+    <div class="row">
+        <div class="col-auto"> <%= link_to "Store Home", store_path %> </div>
+      <% if user_signed_in? %>
+        <% if current_cart %>
+        <div class="col-auto"> <%= link_to "Cart", cart_path(current_cart) %> </div>
         <% end %>
-    </ul>
-</nav>
+        <div class="col-auto"> <%= link_to  "Signed in as #{current_user.email}", current_user %> </div>
+        <div class="col-auto"><%= link_to  "Sign out", destroy_user_session_path, method: 'delete' %></div>
+      <% else %>
+        <div class="col-auto"><%= link_to  "sign in", new_user_session_path %></div>
+        <div class="col-auto"><%= link_to  "Sign up", new_user_registration_path %></div>
+      <% end %>
+    </div>
+</div>
