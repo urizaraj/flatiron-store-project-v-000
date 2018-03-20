@@ -27,6 +27,7 @@ end
 
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem "bootstrap-sass", "~> 3.1.1"
+# gem 'bootstrap', '~> 4.0.0'
 gem "faker"
 gem "friendly_id"
 gem 'tzinfo-data'
