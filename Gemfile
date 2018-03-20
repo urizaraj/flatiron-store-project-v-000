@@ -25,6 +25,7 @@ group :test, :development do
   gem "guard-rspec", require: false
 end
 
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem "bootstrap-sass", "~> 3.1.1"
 gem "faker"
 gem "friendly_id"

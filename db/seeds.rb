@@ -16,5 +16,6 @@ end
 
 User.create(
   name: 'One',
-  password: 'password'
+  password: 'password',
+  email: 'test@email.com'
 )
