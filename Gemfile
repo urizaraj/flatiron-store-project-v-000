@@ -23,9 +23,9 @@ group :test, :development do
   gem "sqlite3"
   gem "pry"
   gem "guard-rspec", require: false
-  gem "thin"
 end
 
 gem "bootstrap-sass", "~> 3.1.1"
 gem "faker"
 gem "friendly_id"
+gem 'tzinfo-data'
