@@ -33,7 +33,7 @@
 
 <br>
 
-<p>Order total: <strong><%= number_to_currency(current_cart.total) %></strong> </p>
+<p>Order total: <strong><%= number_to_currency(current_cart.total_dollars) %></strong> </p>
 
 <% if current_cart.status == 'not submitted' %>
   <%= button_to 'Checkout', checkout_path(current_cart.id), class: 'btn btn-primary' %>
