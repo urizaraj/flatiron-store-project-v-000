@@ -8,6 +8,10 @@ class Cart < ActiveRecord::Base
     line_items.each do |li|
       total += li.quantity * li.item.price
     end
+    total
+  end
+
+  def total_dollars
     total.to_f/100
   end
 
