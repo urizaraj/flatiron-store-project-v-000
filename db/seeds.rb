@@ -18,8 +18,4 @@ User.create(
   name: 'One',
   password: 'password',
   email: 'test@email.com'
-<<<<<<< HEAD
 )
-=======
-)
->>>>>>> f2d0ebe1ce4cd6db8ffd8560e59c5c23c0b88676
