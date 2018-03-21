@@ -8,21 +8,28 @@ class Cart < ActiveRecord::Base
     line_items.each do |li|
       total += li.quantity * li.item.price
     end
-    total
+    total.to_f/100
   end
 
   def add_item(item_id)
-    item = Item.find(item_id)
-    if items.include?(item)
+    if items.include?(Item.find(item_id))
       li = line_items.where(item_id: item_id).first
       li.quantity += 1
       li.save
     else
       li = LineItem.new
-
       li.cart = self
       li.item_id = item_id
     end
     li
+  end
+
+  def checkout
+    line_items.each do |li|
+      item = li.item
+      item.inventory -= li.quantity
+      item.save
+    end
+    update(status: 'submitted')
   end
 end

@@ -1,7 +1,8 @@
 class LineItemsController < ApplicationController
   def create
     if current_user.current_cart
-      current_user.current_cart.add_item(item_id)
+      li = current_user.current_cart.add_item(params[:item_id])
+      li.save
     else
       cart = current_user.carts.build
       li = cart.add_item(params[:item_id])
@@ -9,6 +10,6 @@ class LineItemsController < ApplicationController
       current_user.update(current_cart: cart)
     end
 
-    redirect_to store_path
+    redirect_to cart_path(current_user.current_cart)
   end
 end

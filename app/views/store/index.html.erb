@@ -1,11 +1,11 @@
-<% @categories.each do |category| %>
-  <%= link_to category.title, category_path(category), class: 'btn btn-primary' %>
-<% end %>
+<div class="row text-center">
+  <div class="col">
+    <% @categories.each do |category| %>
+      <%= link_to category.title, category_path(category), class: 'btn btn-outline-primary mb-1' %>
+    <% end %>
+  </div>
+</div>
 
 <% @items.each do |item| %>
-  <div class="card mb-1">
-    <div class="card-body">
-      <%= item.title %> | <%= number_to_currency(item.price) %> | <%= button_to 'Add to Cart', line_items_path(item_id: item) %>
-    </div>
-  </div>
+  <%= render partial: 'items/item', locals: {item: item} %>
 <% end %>

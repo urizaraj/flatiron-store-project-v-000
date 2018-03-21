@@ -1,0 +1,7 @@
+<div class="card mb-1">
+  <div class="card-body">
+    <h4><%= item.title %></h4>
+    <h6><%= number_to_currency(item.dollars) %></h6>
+    <%= button_to 'Add to Cart', line_items_path(item_id: item), class: 'btn btn-primary btn-sm' %>
+  </div>
+</div>
